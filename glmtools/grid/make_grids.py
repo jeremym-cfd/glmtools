@@ -932,6 +932,8 @@ def proc_each_grid(subgrid, start_time=None, end_time=None, GLM_filenames=None):
         # subgrids are handled - avoiding the hacky output preprocessor in
         # all cases.
         outfilenames = preprocess_out.write_all()
+        if not outfilenames:
+            outfilenames = output
     else:
         outfilenames = gridder.write_grids(**out_kwargs_ij)
 
